@@ -1,0 +1,10 @@
+PODS:
+  - Hangit (1.2.4)
+
+DEPENDENCIES:
+  - Hangit
+
+SPEC CHECKSUMS:
+  Hangit: 931028af888492555df5bda7cd8db8dcbe610e49
+
+COCOAPODS: 0.36.3

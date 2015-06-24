@@ -7,18 +7,32 @@
 //
 
 import UIKit
+import HangitSDK
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, SessionManagerDelegate {
 
     var window: UIWindow?
-
+    var sessionManager:SessionManager!
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+
+        sessionManager = SessionManager.sharedInstance();
+        sessionManager.presentNotifications = true;
+        sessionManager.presentOfferView = true;
+        sessionManager.delegate = self;
+        sessionManager.startSessionUsingLocation("37decebbc1c49f155c3fa3242476a9be");
+        
         return true
     }
 
+    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+
+        NSNotificationCenter.defaultCenter().postNotificationName("hangitNotificationReceived", object: notification);
+        
+    }
+    
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
