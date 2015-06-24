@@ -1,4 +1,4 @@
-#HangIt iOS Swift Example
+HangIt iOS Swift Example
 =========================
 Version 1.2.4
 
