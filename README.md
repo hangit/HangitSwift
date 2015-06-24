@@ -1,5 +1,5 @@
-# HangIt iOS Swift Example
-===========
+#HangIt iOS Swift Example
+=========================
 Version 1.2.4
 
 Looking to integrate with the HangIt iOS SDK? Everything you need is here.
