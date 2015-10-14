@@ -22,8 +22,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SessionManagerDelegate {
         sessionManager.presentNotifications = true;
         sessionManager.presentOfferView = true;
         sessionManager.delegate = self;
-        sessionManager.startSessionUsingLocation("37decebbc1c49f155c3fa3242476a9be");
+        sessionManager.startSession("YOURAPPID");
         
+        /**
+        *  Starts Location Manager in SDK
+        *  Use this method when you want to
+        *  offer location enabled deals
+        */
+        sessionManager.startLocation();
+        
+        /**
+        *  Stops Location Manager in SDK
+        *
+        *  Stops Location Manager in SDK
+        *  Use this method when you want to
+        *  stop offering location enabled deals
+        */
+        // sessionManager.stopLocation();
+
+        
+        /**
+        *  Respond true or false wether location
+        *  is enabled or disabled by the user
+        *  for your app
+        */
+        // sessionManager.isLocationEnabled();
+
         return true
     }
 
